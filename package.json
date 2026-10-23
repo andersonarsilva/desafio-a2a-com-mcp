@@ -1,0 +1,34 @@
+{
+  "name": "desafio-a2a-com-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "servidor-mcp",
+    "agente"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "lint": "eslint .",
+    "test": "npm run test --workspaces",
+    "test:coverage": "npm run test:coverage --workspaces",
+    "start:mcp": "npm run start -w servidor-mcp",
+    "start:agente": "npm run start -w agente",
+    "validar": "python3 validador/validar.py --agente http://localhost:7300 --mcp http://localhost:7301"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@jest/globals": "30.5.2",
+    "@types/jest": "30.0.0",
+    "@types/node": "22.20.5",
+    "eslint": "10.12.0",
+    "jest": "30.5.2",
+    "ts-jest": "29.4.14",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.1"
+  }
+}
